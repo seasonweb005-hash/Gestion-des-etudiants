@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos — Tableau de Gestion des Étudiants</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!--BARRE DE NAVIGATION-->
+    <nav class="navbar">
+      <div class="navbar-contenu">
+        <a class="navbar-logo" href="index.html">
+          <span>🎓</span> GestionÉtu
+        </a>
+        <ul class="navbar-liens">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="etudiants.html">Étudiants</a></li>
+          <li><a href="statistiques.html">Statistiques</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--CONTENU PRINCIPAL-->
+    <main class="contenu-principal">
+
+      <!-- En-tête -->
+      <div class="en-tete-page">
+        <h1>À propos du projet</h1>
+        <p>Découvrez les détails techniques et l'objectif de ce projet.</p>
+      </div>
+
+      <!-- Description générale -->
+      <section class="carte" style="margin-bottom: 2rem;">
+        <h2 class="titre-section">Description du projet</h2>
+        <p style="color: var(--couleur-texte-clair); line-height: 1.9; margin-bottom: 1rem;">
+          Ce site web a été réalisé dans le cadre d'un projet scolaire de deuxième année
+          en développement web. L'objectif est de créer une application simple permettant
+          de <strong>gérer une liste d'étudiants</strong> sans utiliser de serveur ou de base
+          de données externe.
+        </p>
+        <p style="color: var(--couleur-texte-clair); line-height: 1.9;">
+          Toutes les données sont stockées dans le <strong>localStorage</strong> du navigateur,
+          ce qui permet de conserver les informations même après fermeture de la page.
+          Le projet est entièrement développé avec les technologies de base du web :
+          HTML, CSS et JavaScript.
+        </p>
+      </section>
+
+      <!-- Technologies utilisées -->
+      <section style="margin-bottom: 2rem;">
+        <h2 class="titre-section">Technologies utilisées</h2>
+
+        <div class="grille-apropos">
+
+          <!-- HTML -->
+          <div class="carte-technologie">
+            <h3>HTML5</h3>
+            <p>
+              Langage de base utilisé pour structurer le contenu des pages web.
+              Chaque page est un fichier <code>.html</code> avec une structure sémantique claire.
+            </p>
+          </div>
+
+          <!-- CSS -->
+          <div class="carte-technologie">
+            <h3>CSS3</h3>
+            <p>
+              Utilisé pour le style et la mise en page. Le projet utilise
+              <strong>Flexbox</strong> et <strong>CSS Grid</strong> pour créer une
+              interface responsive et moderne.
+            </p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="carte-technologie">
+            <h3>JavaScript</h3>
+            <p>
+              Le JavaScript gère toute la logique : ajout et suppression d'étudiants,
+              recherche, filtrage et sauvegarde dans le <strong>localStorage</strong>.
+            </p>
+          </div>
+
+          <!-- localStorage -->
+          <div class="carte-technologie">
+            <h3>localStorage</h3>
+            <p>
+              Permet de sauvegarder les données directement dans le navigateur.
+              Les étudiants restent disponibles même après fermeture et réouverture de la page.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Fonctionnalités -->
+      <section class="carte" style="margin-bottom: 2rem;">
+        <h2 class="titre-section">✅ Fonctionnalités du projet</h2>
+
+        <ul class="liste-fonctionnalites">
+          <li>Affichage d'une liste dynamique d'étudiants dans un tableau</li>
+          <li>Ajout d'un étudiant via un formulaire avec validation</li>
+          <li>Suppression d'un étudiant avec confirmation</li>
+          <li>Recherche d'un étudiant par nom ou prénom</li>
+          <li>Filtrage de la liste par filière</li>
+          <li>Calcul automatique de la moyenne générale</li>
+          <li>Identification du meilleur étudiant</li>
+          <li>Répartition des étudiants par filière avec barres de progression</li>
+          <li>Sauvegarde des données avec localStorage</li>
+          <li>Design responsive adapté au mobile et au bureau</li>
+        </ul>
+      </section>
+
+      <!-- Structure du projet -->
+      <section class="carte">
+        <h2 class="titre-section">📁 Structure des fichiers</h2>
+
+        <!-- Affichage de la structure du projet comme du code -->
+        <div style="
+          background: #1e293b;
+          color: #e2e8f0;
+          border-radius: 10px;
+          padding: 1.5rem;
+          font-family: 'Courier New', monospace;
+          font-size: 0.9rem;
+          line-height: 2;
+        ">
+          <span style="color: #94a3b8;">📁 tableau-etudiants/</span><br />
+          &nbsp;&nbsp;<span style="color: #60a5fa;">├── index.html</span>
+          <span style="color: #94a3b8;"> → Page d'accueil</span><br />
+          &nbsp;&nbsp;<span style="color: #60a5fa;">├── etudiants.html</span>
+          <span style="color: #94a3b8;"> → Gestion des étudiants</span><br />
+          &nbsp;&nbsp;<span style="color: #60a5fa;">├── statistiques.html</span>
+          <span style="color: #94a3b8;"> → Statistiques de la classe</span><br />
+          &nbsp;&nbsp;<span style="color: #60a5fa;">├── apropos.html</span>
+          <span style="color: #94a3b8;"> → À propos du projet</span><br />
+          &nbsp;&nbsp;<span style="color: #f472b6;">├── style.css</span>
+          <span style="color: #94a3b8;"> → Styles partagés</span><br />
+          &nbsp;&nbsp;<span style="color: #fbbf24;">└── script.js</span>
+          <span style="color: #94a3b8;"> → Logique JavaScript</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!--PIED DE PAGE-->
+    <footer class="pied-page">
+      <p>📚 Tableau de Gestion des Étudiants — Projet scolaire HTML / CSS / JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
