@@ -1,0 +1,726 @@
+/* ===================================
+   TABLEAU DE GESTION DES ÉTUDIANTS
+   Fichier : style.css
+   Description : Styles pour toutes les pages
+   =================================== */
+
+/* --- Variables de couleurs et polices --- */
+:root {
+  --couleur-principale: #2563eb;
+  --couleur-secondaire: #1e40af;
+  --couleur-accent: #3b82f6;
+  --couleur-succes: #16a34a;
+  --couleur-danger: #dc2626;
+  --couleur-avertissement: #d97706;
+  --couleur-fond: #f0f4ff;
+  --couleur-fond-carte: #ffffff;
+  --couleur-texte: #1e293b;
+  --couleur-texte-clair: #64748b;
+  --couleur-bordure: #e2e8f0;
+  --ombre-carte: 0 4px 20px rgba(37, 99, 235, 0.08);
+  --rayon-bordure: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* --- Reset de base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  min-height: 100vh;
+}
+
+/* ===================================
+   BARRE DE NAVIGATION
+   =================================== */
+.navbar {
+  background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+  padding: 0 2rem;
+  box-shadow: 0 2px 20px rgba(37, 99, 235, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 65px;
+}
+
+/* Logo de la navbar */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  font-size: 1.5rem;
+}
+
+/* Liens de navigation */
+.navbar-liens {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.navbar-liens a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Effet hover sur les liens */
+.navbar-liens a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* Lien actif (page actuelle) */
+.navbar-liens a.actif {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* ===================================
+   CONTENU PRINCIPAL
+   =================================== */
+.contenu-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ===================================
+   EN-TÊTE DES PAGES
+   =================================== */
+.en-tete-page {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.en-tete-page h1 {
+  font-size: 2rem;
+  color: var(--couleur-texte);
+  margin-bottom: 0.5rem;
+}
+
+.en-tete-page p {
+  color: var(--couleur-texte-clair);
+  font-size: 1rem;
+}
+
+/* ===================================
+   CARTES (Cards)
+   =================================== */
+.carte {
+  background: var(--couleur-fond-carte);
+  border-radius: var(--rayon-bordure);
+  padding: 1.5rem;
+  box-shadow: var(--ombre-carte);
+  border: 1px solid var(--couleur-bordure);
+  transition: var(--transition);
+}
+
+.carte:hover {
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   SECTION HÉRO (Page d'accueil)
+   =================================== */
+.section-hero {
+  background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-accent));
+  color: white;
+  border-radius: var(--rayon-bordure);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Décoration de fond du hero */
+.section-hero::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.section-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+
+.section-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-hero p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   BOUTONS
+   =================================== */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.bouton-principal {
+  background: var(--couleur-principale);
+  color: white;
+}
+
+.bouton-principal:hover {
+  background: var(--couleur-secondaire);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.bouton-blanc {
+  background: white;
+  color: var(--couleur-principale);
+}
+
+.bouton-blanc:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bouton-danger {
+  background: var(--couleur-danger);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.bouton-danger:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+/* ===================================
+   GRILLE DE STATISTIQUES
+   =================================== */
+.grille-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.carte-stat {
+  background: var(--couleur-fond-carte);
+  border-radius: var(--rayon-bordure);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--ombre-carte);
+  border: 1px solid var(--couleur-bordure);
+  border-top: 4px solid var(--couleur-principale);
+  transition: var(--transition);
+}
+
+.carte-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+}
+
+.carte-stat .icone-stat {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.carte-stat .valeur-stat {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--couleur-principale);
+  display: block;
+}
+
+.carte-stat .label-stat {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-clair);
+  margin-top: 0.3rem;
+}
+
+/* Couleurs variées pour les cartes stats */
+.carte-stat:nth-child(2) {
+  border-top-color: var(--couleur-succes);
+}
+
+.carte-stat:nth-child(2) .valeur-stat {
+  color: var(--couleur-succes);
+}
+
+.carte-stat:nth-child(3) {
+  border-top-color: var(--couleur-avertissement);
+}
+
+.carte-stat:nth-child(3) .valeur-stat {
+  color: var(--couleur-avertissement);
+}
+
+/* ===================================
+   FORMULAIRE D'AJOUT D'ÉTUDIANT
+   =================================== */
+.section-formulaire {
+  margin-bottom: 2rem;
+}
+
+.formulaire-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.groupe-champ {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.groupe-champ label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--couleur-texte);
+}
+
+.groupe-champ input,
+.groupe-champ select {
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--couleur-bordure);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--couleur-texte);
+  background: white;
+  transition: var(--transition);
+  outline: none;
+}
+
+/* Focus sur les champs */
+.groupe-champ input:focus,
+.groupe-champ select:focus {
+  border-color: var(--couleur-principale);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Message d'erreur de validation */
+.erreur-champ {
+  font-size: 0.8rem;
+  color: var(--couleur-danger);
+  display: none;
+}
+
+.erreur-champ.visible {
+  display: block;
+}
+
+/* ===================================
+   BARRE DE RECHERCHE ET FILTRE
+   =================================== */
+.zone-recherche {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.zone-recherche input,
+.zone-recherche select {
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--couleur-bordure);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.zone-recherche input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.zone-recherche input:focus,
+.zone-recherche select:focus {
+  border-color: var(--couleur-principale);
+}
+
+/* ===================================
+   TABLEAU DES ÉTUDIANTS
+   =================================== */
+.conteneur-tableau {
+  overflow-x: auto;
+  border-radius: var(--rayon-bordure);
+  border: 1px solid var(--couleur-bordure);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+  color: white;
+}
+
+thead th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--couleur-bordure);
+  transition: var(--transition);
+}
+
+/* Effet hover sur les lignes */
+tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+tbody td {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--couleur-texte);
+}
+
+/* Badge de note */
+.badge-note {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.note-bonne {
+  background: #dcfce7;
+  color: var(--couleur-succes);
+}
+
+.note-moyenne {
+  background: #fef9c3;
+  color: var(--couleur-avertissement);
+}
+
+.note-faible {
+  background: #fee2e2;
+  color: var(--couleur-danger);
+}
+
+/* Message quand le tableau est vide */
+.message-vide {
+  text-align: center;
+  padding: 3rem;
+  color: var(--couleur-texte-clair);
+  font-size: 1rem;
+}
+
+/* ===================================
+   PAGE STATISTIQUES
+   =================================== */
+.grille-stats-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Carte de meilleur étudiant */
+.carte-meilleur {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid #86efac;
+  border-radius: var(--rayon-bordure);
+  padding: 1.5rem;
+}
+
+.carte-meilleur h3 {
+  color: var(--couleur-succes);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.nom-meilleur {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+}
+
+.note-meilleur {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--couleur-succes);
+}
+
+/* Barres de progression */
+.barre-progression-conteneur {
+  margin-bottom: 1rem;
+}
+
+.barre-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.barre-fond {
+  background: var(--couleur-bordure);
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.barre-remplie {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--couleur-principale), var(--couleur-accent));
+  transition: width 1s ease;
+}
+
+/* ===================================
+   PAGE À PROPOS
+   =================================== */
+.grille-apropos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.carte-technologie {
+  background: var(--couleur-fond-carte);
+  border-radius: var(--rayon-bordure);
+  padding: 1.5rem;
+  border: 1px solid var(--couleur-bordure);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.carte-technologie:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ombre-carte);
+}
+
+.icone-techno {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.carte-technologie h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--couleur-texte);
+}
+
+.carte-technologie p {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-clair);
+  line-height: 1.6;
+}
+
+/* Ligne de fonctionnalités */
+.liste-fonctionnalites {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.liste-fonctionnalites li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--couleur-texte);
+}
+
+.liste-fonctionnalites li::before {
+  content: '✓';
+  background: var(--couleur-principale);
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ===================================
+   MESSAGES DE NOTIFICATION
+   =================================== */
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--couleur-succes);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  z-index: 1000;
+  transform: translateX(200%);
+  transition: transform 0.4s ease;
+}
+
+.notification.visible {
+  transform: translateX(0);
+}
+
+.notification.erreur {
+  background: var(--couleur-danger);
+}
+
+/* ===================================
+   PIED DE PAGE
+   =================================== */
+.pied-page {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid var(--couleur-bordure);
+  color: var(--couleur-texte-clair);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ===================================
+   TITRE DE SECTION
+   =================================== */
+.titre-section {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ===================================
+   RESPONSIVE (Mobile)
+   =================================== */
+@media (max-width: 768px) {
+  .navbar-contenu {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 0.8rem;
+  }
+
+  .navbar-liens {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .contenu-principal {
+    padding: 1.5rem 1rem;
+  }
+
+  .formulaire-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-recherche {
+    flex-direction: column;
+  }
+
+  .grille-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grille-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-hero h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===================================
+   ANIMATION D'ENTRÉE
+   =================================== */
+@keyframes apparaitre {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carte, .carte-stat, .section-hero {
+  animation: apparaitre 0.5s ease forwards;
+}
